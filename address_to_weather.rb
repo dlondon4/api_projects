@@ -19,16 +19,16 @@ parsed_data = JSON.parse(raw_data)
 the_latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
 the_longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
-url = "https://api.forecast.io/forecast/5fee92a639af2acdf2b460fed7a521ac/#{the_latitude},#{the_longitude}"
-raw_data = open(url).read
-parsed_data = JSON.parse(raw_data)
+url_weather = "https://api.forecast.io/forecast/5fee92a639af2acdf2b460fed7a521ac/#{the_latitude},#{the_longitude}"
+raw_data_2 = open(url_weather).read
+parsed_data_2 = JSON.parse(raw_data_2)
 
-the_temperature = parsed_data["currently"]["temperature"] #current temperature
-the_hour_outlook = parsed_data["hourly"]["summary"] #hourly summary
-the_day_outlook = parsed_data["daily"]["summary"] #daily summary
+the_temperature = parsed_data_2["currently"]["temperature"] #current temperature
+the_hour_outlook = parsed_data_2["hourly"]["summary"] #hourly summary
+the_day_outlook = parsed_data_2["daily"]["summary"] #daily summary
 
 # Ultimately, we want the following line to work when uncommented:
 
-# puts "The current temperature at #{the_address} is #{the_temperature} degrees."
-# puts "The outlook for the next hour is: #{the_hour_outlook}"
-# puts "The outlook for the next day is: #{the_day_outlook}"
+puts "The current temperature at #{the_address} is #{the_temperature} degrees."
+puts "The outlook for the next hour is: #{the_hour_outlook}"
+puts "The outlook for the next day is: #{the_day_outlook}"
