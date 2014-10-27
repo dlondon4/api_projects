@@ -17,11 +17,10 @@ url_safe_address = URI.encode(the_address)
 
 # Your code goes below. Hints:
 
-# url_of_data_we_want = "???"
-# raw_data = ???
-# parsed_data = ???
-
-# ...
+url_of_data_we_want = "http://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_address
+raw_data = open(url_of_data_we_want).read
+parsed_data = JSON.parse(raw_data)
+results = parsed_data["results"]
 
 # Let's store the latitude in a variable called 'the_latitude',
 #   and the longitude in a variable called 'the_longitude'.
